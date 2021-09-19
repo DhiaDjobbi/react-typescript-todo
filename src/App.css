@@ -1,4 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #1488cc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2b32b2,
+    #1488cc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2b32b2,
+    #1488cc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+} 
 .App {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+  flex: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+.header input {
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 1px solid gray;
 }
 
+.header button {
+  width: 70px;
+  height: 87px;
+  border: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+.todoList {
+  flex: 70%;
+  width: 100%;
+}
