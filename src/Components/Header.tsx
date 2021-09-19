@@ -7,12 +7,13 @@ interface Props {
 }
 const Header = ({ task, deadline, handleChange , addTask}: Props) => {
   return (
-    <div className="header">
+    <div className="header pt-2 mt-2">
       <div className="inputContainer">
         <input
           type="text"
           name="task"
           placeholder="Task...."
+          className="form-control"
           value={task}
           onChange={handleChange}
         />
@@ -21,11 +22,12 @@ const Header = ({ task, deadline, handleChange , addTask}: Props) => {
           name="deadline"
           value={deadline}
           placeholder="Deadline"
+          className="form-control"
           min={0}
           onChange={handleChange}
         />
       </div>
-      <button onClick={addTask}>Add Task</button>
+      <button className="btn btn-dark" onClick={addTask}>Add Task</button>
     </div>
   );
 };

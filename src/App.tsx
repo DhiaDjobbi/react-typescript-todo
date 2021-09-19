@@ -1,6 +1,8 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { ChangeEvent, FC, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header";
+import TodoList from "./Components/TodoList";
 import { ITask } from "./Interfaces";
 
 const App: FC = () => {
@@ -22,7 +24,12 @@ const App: FC = () => {
     setDeadline(0);
   };
 
-  
+   const deleteTask =(id:number) : void => {
+     setTaskList(taskList.filter((task,index) => {
+       return index !== id;
+     }))
+   }
+
   return (
     <div className="App">
       <Header
@@ -31,7 +38,7 @@ const App: FC = () => {
         handleChange={handleChange}
         addTask={addTask}
       />
-      <div className="todoList"></div>
+        <TodoList  taskList={taskList} deleteTask={deleteTask}/>
     </div>
   );
 };
